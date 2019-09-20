@@ -70,6 +70,7 @@ function generarGrillaDePixeles() {
         elemento.addEventListener("mousedown", mousePresionado);
         elemento.addEventListener("mouseup", mouseNoPresionado);
         elemento.addEventListener("mouseover", pintar);
+        elemento.addEventListener("click", pintarUnPixel);
         document.getElementById("grilla-pixeles").appendChild(elemento);
     }
 }
@@ -91,6 +92,12 @@ function mouseNoPresionado() {
     return mouseApretado = false;
 }
 
+//Pintar
+function pintarUnPixel(event) {
+    var elemento = event.currentTarget;
+    elemento.style.backgroundColor = indicadorDeColor.style.backgroundColor;
+
+}
 
 //Pintar
 function pintar(event) {
